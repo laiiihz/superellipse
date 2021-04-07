@@ -1,4 +1,5 @@
 import 'package:flutter/widgets.dart';
+import 'package:superellipse/src/superellipse_radius.dart';
 import 'package:superellipse/superellipse.dart';
 
 ///example
@@ -6,7 +7,6 @@ import 'package:superellipse/superellipse.dart';
 ///```dart
 /// Material(
 ///   shape: SuperellipseShape(
-///     n: 2,
 ///     side: BorderSide(
 ///       color: Colors.pink,
 ///       width: 4,
@@ -17,23 +17,23 @@ import 'package:superellipse/superellipse.dart';
 ///
 class SuperellipseShape extends ShapeBorder {
   final BorderSide side;
-  final double n;
+  final SuperellipseRadius radius;
 
   SuperellipseShape({
     this.side = BorderSide.none,
-    this.n = 3,
-  }) : assert(n >= 0);
+    this.radius = SuperellipseRadius.initial,
+  });
   @override
   EdgeInsetsGeometry get dimensions => EdgeInsets.all(side.width);
 
   @override
   Path getInnerPath(Rect rect, {TextDirection textDirection}) {
-    return superellipsePath(rect, n: n);
+    return superellipsePath(rect, radius: radius);
   }
 
   @override
   Path getOuterPath(Rect rect, {TextDirection textDirection}) {
-    return superellipsePath(rect, n: n);
+    return superellipsePath(rect, radius: radius);
   }
 
   @override
@@ -46,7 +46,7 @@ class SuperellipseShape extends ShapeBorder {
   ShapeBorder scale(double t) {
     return SuperellipseShape(
       side: side.scale(t),
-      n: n,
+      radius: radius,
     );
   }
 }

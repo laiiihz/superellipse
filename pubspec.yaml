@@ -1,6 +1,6 @@
 name: superellipse
-description: A superellipse package.
-version: 0.0.1
+description: A superellipse package that include some useful class like painter,path,shape,etc.
+version: 0.1.0
 homepage: https://github.com/laiiihz/superellipse
 
 environment:

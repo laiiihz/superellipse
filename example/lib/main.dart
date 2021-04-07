@@ -40,7 +40,7 @@ class _HomeState extends State<Home> {
               color: Colors.grey,
               clipBehavior: Clip.antiAlias,
               shape: SuperellipseShape(
-                n: _value,
+                radius: SuperellipseRadius.all(SuperRadius.value(_value)),
                 side: BorderSide(
                   color: Colors.pink,
                   width: 4,
@@ -53,7 +53,10 @@ class _HomeState extends State<Home> {
           SizedBox(height: 20),
           Center(
             child: CustomPaint(
-              painter: SuperellipsePainter(n: _value),
+              painter: SuperellipsePainter(
+                radius:
+                    SuperellipseRadius.only(topLeft: SuperRadius.value(_value)),
+              ),
               size: Size(100, 100),
             ),
           ),
