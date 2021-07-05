@@ -18,7 +18,7 @@ import 'package:superellipse/src/superellipse_radius.dart';
 ///```
 class SuperellipsePainter extends CustomPainter {
   final SuperellipseRadius radius;
-  final Paint displayPaint;
+  final Paint? displayPaint;
   SuperellipsePainter({
     this.radius = SuperellipseRadius.initial,
     this.displayPaint,

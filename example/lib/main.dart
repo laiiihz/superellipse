@@ -54,8 +54,9 @@ class _HomeState extends State<Home> {
           Center(
             child: CustomPaint(
               painter: SuperellipsePainter(
-                radius:
-                    SuperellipseRadius.only(topLeft: SuperRadius.value(_value)),
+                radius: SuperellipseRadius.only(
+                  topLeft: SuperRadius.value(_value),
+                ),
               ),
               size: Size(100, 100),
             ),

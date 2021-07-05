@@ -19,7 +19,7 @@ class SuperellipseShape extends ShapeBorder {
   final BorderSide side;
   final SuperellipseRadius radius;
 
-  SuperellipseShape({
+  const SuperellipseShape({
     this.side = BorderSide.none,
     this.radius = SuperellipseRadius.initial,
   });
@@ -27,18 +27,18 @@ class SuperellipseShape extends ShapeBorder {
   EdgeInsetsGeometry get dimensions => EdgeInsets.all(side.width);
 
   @override
-  Path getInnerPath(Rect rect, {TextDirection textDirection}) {
+  Path getInnerPath(Rect rect, {TextDirection? textDirection}) {
     return superellipsePath(rect, radius: radius);
   }
 
   @override
-  Path getOuterPath(Rect rect, {TextDirection textDirection}) {
+  Path getOuterPath(Rect rect, {TextDirection? textDirection}) {
     return superellipsePath(rect, radius: radius);
   }
 
   @override
-  void paint(Canvas canvas, Rect rect, {TextDirection textDirection}) {
-    Path path = getOuterPath(rect, textDirection: textDirection);
+  void paint(Canvas canvas, Rect rect, {TextDirection? textDirection}) {
+    Path path = getOuterPath(rect);
     canvas.drawPath(path, side.toPaint());
   }
 

@@ -7,10 +7,10 @@ class SuperellipseRadius {
   final SuperRadius bottomLeft;
   final SuperRadius bottomRight;
   const SuperellipseRadius.all(SuperRadius radius)
-      : this.topLeft = radius,
-        this.topRight = radius,
-        this.bottomLeft = radius,
-        this.bottomRight = radius;
+      : topLeft = radius,
+        topRight = radius,
+        bottomLeft = radius,
+        bottomRight = radius;
   const SuperellipseRadius.only({
     this.topLeft = SuperRadius.zero,
     this.topRight = SuperRadius.zero,
@@ -24,7 +24,7 @@ class SuperellipseRadius {
 /// SuperRadius
 class SuperRadius {
   final double radius;
-  const SuperRadius.value(double radius) : this.radius = radius;
+  const SuperRadius.value(this.radius);
   static const initial = SuperRadius.value(3);
   static const zero = SuperRadius.value(0);
 }
